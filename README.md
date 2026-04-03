@@ -178,8 +178,7 @@ Preliminary findings will address:
 
 ## Motivation and Connection to Ongoing Research
 
-This project is a preliminary exploration of a problem I am pursuing at the
-doctoral level: if we ground an LLM in an expert's knowledge and then compress
+This project is a preliminary exploration of a problem I am pursuing: if we ground an LLM in an expert's knowledge and then compress
 that grounded model for edge deployment, does the distilled model retain the
 grounding or only the fluency? FaithfulScholar operationalises the first half
 of that question — grounding and its failure modes — in a controlled,
