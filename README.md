@@ -19,10 +19,16 @@ grounding, or only fluency?
 ---
 
 ## Quick Start
+
 ```bash
 git clone https://github.com/jyotiska/faithfulscholar
 cd faithfulscholar
 pip install -r requirements.txt
+
+# Generate ONNX models (one-time setup, not included in repo)
+python scripts/export_onnx.py
+
+# Add your documents to /corpus, then run the app
 python app.py
 ```
 

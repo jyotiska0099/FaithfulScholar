@@ -191,10 +191,30 @@ def run_all_probes():
         retriever=compressed_retriever
     )
     all_records.extend(probe3_records)
+    
+    # ── Probe 4: ONNX INT8 embedding model ────────────────────────────────────
+    # Same questions as Probe 1, same architecture (L6), INT8 quantised weights.
+    # Compared against Probe 1: isolates the effect of precision reduction only.
+    # Compared against Probe 3: separates architectural compression (L3) from
+    # precision compression (INT8) as two distinct degradation mechanisms.
+    print("\nInitialising ONNX INT8 embedding model...")
+    onnx_embedder = Embedder(use_onnx=True)
+    onnx_embeddings = onnx_embedder.embed_chunks(chunks)
 
-    # Restore original index paths
-    retriever_module.INDEX_PATH = original_index_path
-    retriever_module.CHUNKS_PATH = original_chunks_path
+    retriever_module.INDEX_PATH  = "index/faiss_onnx.index"
+    retriever_module.CHUNKS_PATH = "index/chunks_onnx.pkl"
+
+    onnx_retriever = Retriever()
+    onnx_retriever.build(chunks, onnx_embeddings)
+
+    print("\n── Probe 4: In-corpus faithfulness (ONNX INT8) ──")
+    probe4_records = run_probe(
+        IN_CORPUS_QUESTIONS,
+        probe_name="probe_4_in_corpus_onnx_int8",
+        embedder=onnx_embedder,
+        retriever=onnx_retriever
+    )
+    all_records.extend(probe4_records)
 
     # ── Save all records ───────────────────────────────────────────────────────
     with open(LOG_FILE, "w") as f:
