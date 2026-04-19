@@ -84,7 +84,7 @@ def call_llm(prompt: str, max_new_tokens: int = 512) -> str:
         raise ValueError("GEMINI_API_KEY not found. Check your .env file.")
 
     model = genai.GenerativeModel(
-        model_name="gemini-2.5-flash-lite",
+        model_name="gemini-2.5-flash",
         generation_config=genai.GenerationConfig(
             temperature=0.1,
             max_output_tokens=max_new_tokens,
