@@ -162,17 +162,55 @@ faithfulscholar/
 
 ## Observations
 
-*This section will be populated after running the three probes.*
-*A full one-page analysis is available at: `[link — coming soon]`*
+## Observations
 
-Preliminary findings will address:
-- At what rate does the model hallucinate on out-of-corpus queries under soft
-  grounding constraints?
-- How does retrieval recall@3 change between the full and quantised embedding
-  model?
-- Is there a measurable difference in answer faithfulness between full and
-  compressed retrieval settings — and does that difference correlate with
-  retrieval degradation or appear independently?
+### Probe 1 — In-corpus faithfulness (full model)
+4 out of 5 in-corpus questions answered faithfully with average lexical overlap
+of 0.816. The system correctly attributed answers to source passages in all
+answered cases. One abstention was recorded for the query "What neural
+architecture did you use for stress detection?" — a retrieval failure, not a
+knowledge gap. The answer existed in the corpus but the linguistic distance
+between the query phrasing and the methods section language was sufficient to
+prevent correct retrieval (top score: 0.555). Rephrasing the query to "What is
+TinyTCN?" retrieved the correct passage successfully, confirming the information
+was present but not surfaced by the original phrasing.
+
+### Probe 2 — Out-of-corpus hallucination (full model)
+5 out of 5 out-of-corpus questions correctly abstained. The soft grounding
+constraint — enforced through prompting only, with no architectural prevention
+of parametric knowledge access — held completely for a capable instruction-tuned
+model (Gemini 2.0 Flash) on questions entirely outside the research domain.
+The drift detector recorded overlap ratio of 1.0 for all abstentions, as the
+abstention phrase itself overlaps with the known vocabulary.
+
+### Probe 3 — Compression faithfulness (compressed model)
+Average lexical overlap dropped from 0.816 (full model) to 0.745 (compressed
+model) on the same in-corpus question set — a 7.1% degradation in retrieval
+faithfulness under embedding compression. The compressed model (L3, half the
+layers of the full L6 model) produced 0 abstentions versus 1 in Probe 1,
+suggesting it retrieved different chunks for the previously abstained question.
+Whether this represents improved retrieval or reduced conservatism requires
+further investigation.
+
+### Key findings
+- Retrieval failure is a more common faithfulness failure mode than hallucination
+  under a capable model with explicit grounding constraints.
+- Query phrasing sensitivity is a significant vulnerability — the same information
+  retrieves correctly under one phrasing and fails under another.
+- Embedding compression produces measurable retrieval degradation (7.1%) without
+  triggering the lexical drift detector, suggesting faithfulness loss can be
+  invisible to surface-level metrics.
+- The lexical drift detector did not trigger across 15 queries, indicating the
+  0.15 threshold is too conservative for a capable model — or that Gemini 2.0
+  Flash is sufficiently instruction-following to stay within provided context
+  without detectable lexical drift.
+
+### Open questions motivating doctoral research
+- Does the grounding constraint hold under weaker models or more ambiguous queries?
+- Can retrieval be made robust to query phrasing variation without requiring
+  the user to know the document's exact terminology?
+- When a grounded model is distilled, does the distilled model inherit the
+  retrieval sensitivity or does compression change the failure mode?
 
 ---
 

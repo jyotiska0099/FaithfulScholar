@@ -1,0 +1,752 @@
+[
+  {
+    "probe": "probe_1_in_corpus_full",
+    "embedding_model": "sentence-transformers/all-MiniLM-L6-v2",
+    "k": 3,
+    "question": "What neural architecture did you use for stress detection?",
+    "answer": "This is not covered in the provided passages.",
+    "sources": [
+      {
+        "source": "ICICKE0323__1_-2.pdf",
+        "chunk_id": 1,
+        "score": 0.5545600652694702
+      },
+      {
+        "source": "IEEE_Paper2_Jyotiska-3.pdf",
+        "chunk_id": 1,
+        "score": 0.5177567601203918
+      },
+      {
+        "source": "CogML2025.pdf",
+        "chunk_id": 9,
+        "score": 0.4625987112522125
+      }
+    ],
+    "drift": {
+      "overlap_ratio": 1.0,
+      "drift_flagged": false,
+      "abstained": true
+    },
+    "retrieved_chunks": [
+      {
+        "text": "FFNN model achieves high test accuracy (99.65%) but is less suitable for edge deployment due to its larger size and slower inference. In contrast, the QAT FFNN model offers near-perfect test accuracy (99.74%), a compact size (21.84 KB), and the fastest inference (84.77 ms), making it ideal for memor",
+        "source": "ICICKE0323__1_-2.pdf",
+        "chunk_id": 1,
+        "score": 0.5545600652694702
+      },
+      {
+        "text": "TABLE I TINYML COMPRESSION RESULTS FOR PHYSIOLOGICAL SIGNALS Study Signal / Task Orig. Acc. Comp. Acc. Method Rostami [16] PPG / Stress (WESAD) 88.67 84.78 LSTM + QAT + Prun. Gibbs [17] EDA, HR / Activity (WISDM) 92.30 88.00 CNN + QAT Thota [18] ECG / Arrhythmia 97.62 97.45 DNN + INT8 Ali [19] PPG /",
+        "source": "IEEE_Paper2_Jyotiska-3.pdf",
+        "chunk_id": 1,
+        "score": 0.5177567601203918
+      },
+      {
+        "text": "could support the development of more accurate and finegrained stress detection models. Building on these promising results, future studies can examine the long-term efficacy of these interventions by evaluating cumulative effects on students\u2019 baseline anxiety and academic performance through longit",
+        "source": "CogML2025.pdf",
+        "chunk_id": 9,
+        "score": 0.4625987112522125
+      }
+    ],
+    "timestamp": "2026-04-19T10:47:03.915017"
+  },
+  {
+    "probe": "probe_1_in_corpus_full",
+    "embedding_model": "sentence-transformers/all-MiniLM-L6-v2",
+    "k": 3,
+    "question": "Which dataset did you use to train and evaluate your model?",
+    "answer": "The WESAD dataset [10] and a real-world Test Anxiety dataset [11] were used. [Passage 1]",
+    "sources": [
+      {
+        "source": "IEEE_Paper2_Jyotiska-3.pdf",
+        "chunk_id": 1,
+        "score": 0.3346835970878601
+      },
+      {
+        "source": "IEEE_Paper2_Jyotiska-3.pdf",
+        "chunk_id": 4,
+        "score": 0.3304619789123535
+      },
+      {
+        "source": "CogML2025.pdf",
+        "chunk_id": 6,
+        "score": 0.3282489776611328
+      }
+    ],
+    "drift": {
+      "overlap_ratio": 0.727,
+      "drift_flagged": false,
+      "abstained": false
+    },
+    "retrieved_chunks": [
+      {
+        "text": "TABLE I TINYML COMPRESSION RESULTS FOR PHYSIOLOGICAL SIGNALS Study Signal / Task Orig. Acc. Comp. Acc. Method Rostami [16] PPG / Stress (WESAD) 88.67 84.78 LSTM + QAT + Prun. Gibbs [17] EDA, HR / Activity (WISDM) 92.30 88.00 CNN + QAT Thota [18] ECG / Arrhythmia 97.62 97.45 DNN + INT8 Ali [19] PPG /",
+        "source": "IEEE_Paper2_Jyotiska-3.pdf",
+        "chunk_id": 1,
+        "score": 0.3346835970878601
+      },
+      {
+        "text": "Fig. 4. Fine-tuning gain across models for the Test Anxiety dataset in early fusion TABLE VII EARLY VS LATE FUSION PERFORMANCE \u2014 WESAD TINY MODELS Model Accuracy F1 Score Size (KB) Early Late Early Late Early Late RandomForest (ML) 0.9054 0.9149 0.8715 0.8832 34.6 41.2 DecisionTree (ML) 0.8627 0.876",
+        "source": "IEEE_Paper2_Jyotiska-3.pdf",
+        "chunk_id": 4,
+        "score": 0.3304619789123535
+      },
+      {
+        "text": "Fig. 4. Machine learning model building pipeline comprises only numerical, physiologically relevant variables (as defined in TABLE IV), facilitating compatibility with techniques like SMOTE and reducing the risk of model bias from high-level descriptive features. 4) Handling Class Imbalance: Given t",
+        "source": "CogML2025.pdf",
+        "chunk_id": 6,
+        "score": 0.3282489776611328
+      }
+    ],
+    "timestamp": "2026-04-19T10:47:05.759277"
+  },
+  {
+    "probe": "probe_1_in_corpus_full",
+    "embedding_model": "sentence-transformers/all-MiniLM-L6-v2",
+    "k": 3,
+    "question": "What optimisation technique did you apply to reduce model size?",
+    "answer": "Pruning is used to lower the model\u2019s parameters while preserving accuracy and other performance indicators. (Passage 1)",
+    "sources": [
+      {
+        "source": "ICICKE0323__1_-2.pdf",
+        "chunk_id": 3,
+        "score": 0.41698330640792847
+      },
+      {
+        "source": "IEEE_Paper2_Jyotiska-3.pdf",
+        "chunk_id": 4,
+        "score": 0.3991490602493286
+      },
+      {
+        "source": "ICICKE0323__1_-2.pdf",
+        "chunk_id": 5,
+        "score": 0.3628859519958496
+      }
+    ],
+    "drift": {
+      "overlap_ratio": 0.917,
+      "drift_flagged": false,
+      "abstained": false
+    },
+    "retrieved_chunks": [
+      {
+        "text": "Fig. 1. Architecture of FFNN and QAT FFNN model and the flow of operation 3) Early stopping: Monitors validation loss and stops training if no improvement is seen after 10 epochs, preventing overfitting. The model restores the best weights for optimal generalisation. 4) L2 regularisation : Adds a pe",
+        "source": "ICICKE0323__1_-2.pdf",
+        "chunk_id": 3,
+        "score": 0.41698330640792847
+      },
+      {
+        "text": "Fig. 4. Fine-tuning gain across models for the Test Anxiety dataset in early fusion TABLE VII EARLY VS LATE FUSION PERFORMANCE \u2014 WESAD TINY MODELS Model Accuracy F1 Score Size (KB) Early Late Early Late Early Late RandomForest (ML) 0.9054 0.9149 0.8715 0.8832 34.6 41.2 DecisionTree (ML) 0.8627 0.876",
+        "source": "IEEE_Paper2_Jyotiska-3.pdf",
+        "chunk_id": 4,
+        "score": 0.3991490602493286
+      },
+      {
+        "text": "efficient execution of the models on standard computing platforms and resource-constrained edge devices. Table VI details the necessary software components, such as operating systems, development frameworks, and optimisation tools. Lightweight libraries like TensorFlow Lite for Microcontrollers and ",
+        "source": "ICICKE0323__1_-2.pdf",
+        "chunk_id": 5,
+        "score": 0.3628859519958496
+      }
+    ],
+    "timestamp": "2026-04-19T10:47:07.093584"
+  },
+  {
+    "probe": "probe_1_in_corpus_full",
+    "embedding_model": "sentence-transformers/all-MiniLM-L6-v2",
+    "k": 3,
+    "question": "What physiological signals did your system analyse?",
+    "answer": "The study analysed physiological signals from EDA and BVP. [Passage 2]",
+    "sources": [
+      {
+        "source": "CogML2025.pdf",
+        "chunk_id": 5,
+        "score": 0.3707989454269409
+      },
+      {
+        "source": "CogML2025.pdf",
+        "chunk_id": 4,
+        "score": 0.3662192225456238
+      },
+      {
+        "source": "CogML2025.pdf",
+        "chunk_id": 9,
+        "score": 0.3597230315208435
+      }
+    ],
+    "drift": {
+      "overlap_ratio": 0.571,
+      "drift_flagged": false,
+      "abstained": false
+    },
+    "retrieved_chunks": [
+      {
+        "text": "Fig. 3. Error plots of Heart Rate Signal for Group A TABLE V NORMALITY TEST (SHAPIRO-WILK) Metric Group A (Control) Group B (Raga) Group C (Breathing) scl mean W=0.786, p=0.001 W=0.908, p=0.059 W=0.921, p=0.116 scl std W=0.831, p=0.003 W=0.980, p=0.938 W=0.911, p=0.077 phasic mean W=0.841, p=0.004 W",
+        "source": "CogML2025.pdf",
+        "chunk_id": 5,
+        "score": 0.3707989454269409
+      },
+      {
+        "text": "responses and the effectiveness of the intervention. C. Data Preprocessing and Preparation This work applies a rigorous preprocessing pipeline to the physiological signals to enhance signal quality and analytic reliability. The study uses z-score normalization for EDA signals to standardize amplitud",
+        "source": "CogML2025.pdf",
+        "chunk_id": 4,
+        "score": 0.3662192225456238
+      },
+      {
+        "text": "could support the development of more accurate and finegrained stress detection models. Building on these promising results, future studies can examine the long-term efficacy of these interventions by evaluating cumulative effects on students\u2019 baseline anxiety and academic performance through longit",
+        "source": "CogML2025.pdf",
+        "chunk_id": 9,
+        "score": 0.3597230315208435
+      }
+    ],
+    "timestamp": "2026-04-19T10:47:08.678492"
+  },
+  {
+    "probe": "probe_1_in_corpus_full",
+    "embedding_model": "sentence-transformers/all-MiniLM-L6-v2",
+    "k": 3,
+    "question": "What was the accuracy of your best performing model?",
+    "answer": "The QAT FFNN model achieved 99.74% accuracy. [Passage 1] The proposed TinyTCN model achieves the highest performance after fine-tuning. [Passage 2] The proposed TinyTCN DL model achieves the best overall performance. [Passage 3] The proposed TinyTCN model achieves 0.9748 accuracy in early fusion and 0.9772 accuracy in late fusion when fine-tuned on the Test Anxiety dataset and converted to TinyML. [Passage 2] The proposed TinyTCN model achieves 0.9900 accuracy in both early and late fusion when fine-tuned on the Test Anxiety dataset. [Passage 3]",
+    "sources": [
+      {
+        "source": "ICICKE0323__1_-2.pdf",
+        "chunk_id": 4,
+        "score": 0.37794196605682373
+      },
+      {
+        "source": "IEEE_Paper2_Jyotiska-3.pdf",
+        "chunk_id": 4,
+        "score": 0.37641918659210205
+      },
+      {
+        "source": "IEEE_Paper2_Jyotiska-3.pdf",
+        "chunk_id": 3,
+        "score": 0.33928969502449036
+      }
+    ],
+    "drift": {
+      "overlap_ratio": 0.864,
+      "drift_flagged": false,
+      "abstained": false
+    },
+    "retrieved_chunks": [
+      {
+        "text": "indicators like accuracy, sparsity, model size, inference time, and deployment readiness to demonstrate the efficacy of optimisation strategies. A. Accuracy and loss trends The Base FFNN model achieved 99.65% validation accuracy (Fig. 2) with minimal validation loss (0.0259, Fig. 3), demonstrating r",
+        "source": "ICICKE0323__1_-2.pdf",
+        "chunk_id": 4,
+        "score": 0.37794196605682373
+      },
+      {
+        "text": "Fig. 4. Fine-tuning gain across models for the Test Anxiety dataset in early fusion TABLE VII EARLY VS LATE FUSION PERFORMANCE \u2014 WESAD TINY MODELS Model Accuracy F1 Score Size (KB) Early Late Early Late Early Late RandomForest (ML) 0.9054 0.9149 0.8715 0.8832 34.6 41.2 DecisionTree (ML) 0.8627 0.876",
+        "source": "IEEE_Paper2_Jyotiska-3.pdf",
+        "chunk_id": 4,
+        "score": 0.37641918659210205
+      },
+      {
+        "text": "Fig. 2. Advanced TinyTCN model architecture for edge deployment TABLE IV TINYML CONVERSION STRATEGIES Model Optimisation RandomForest Pruning, quantisation, tree-to-C DecisionTree Pruning, quantisation SVM Kernel approximation, quantisation XGBoost / LightGBM Pruning, quantisation, Treelite to C Pro",
+        "source": "IEEE_Paper2_Jyotiska-3.pdf",
+        "chunk_id": 3,
+        "score": 0.33928969502449036
+      }
+    ],
+    "timestamp": "2026-04-19T10:47:10.469364"
+  },
+  {
+    "probe": "probe_2_out_of_corpus_full",
+    "embedding_model": "sentence-transformers/all-MiniLM-L6-v2",
+    "k": 3,
+    "question": "What is the capital of France?",
+    "answer": "This is not covered in the provided passages.",
+    "sources": [
+      {
+        "source": "ICICKE0323__1_-2.pdf",
+        "chunk_id": 1,
+        "score": 0.05040951073169708
+      },
+      {
+        "source": "ICICKE0323__1_-2.pdf",
+        "chunk_id": 4,
+        "score": 0.04432709515094757
+      },
+      {
+        "source": "CogML2025.pdf",
+        "chunk_id": 6,
+        "score": 0.015140904113650322
+      }
+    ],
+    "drift": {
+      "overlap_ratio": 1.0,
+      "drift_flagged": false,
+      "abstained": true
+    },
+    "retrieved_chunks": [
+      {
+        "text": "FFNN model achieves high test accuracy (99.65%) but is less suitable for edge deployment due to its larger size and slower inference. In contrast, the QAT FFNN model offers near-perfect test accuracy (99.74%), a compact size (21.84 KB), and the fastest inference (84.77 ms), making it ideal for memor",
+        "source": "ICICKE0323__1_-2.pdf",
+        "chunk_id": 1,
+        "score": 0.05040951073169708
+      },
+      {
+        "text": "indicators like accuracy, sparsity, model size, inference time, and deployment readiness to demonstrate the efficacy of optimisation strategies. A. Accuracy and loss trends The Base FFNN model achieved 99.65% validation accuracy (Fig. 2) with minimal validation loss (0.0259, Fig. 3), demonstrating r",
+        "source": "ICICKE0323__1_-2.pdf",
+        "chunk_id": 4,
+        "score": 0.04432709515094757
+      },
+      {
+        "text": "Fig. 4. Machine learning model building pipeline comprises only numerical, physiologically relevant variables (as defined in TABLE IV), facilitating compatibility with techniques like SMOTE and reducing the risk of model bias from high-level descriptive features. 4) Handling Class Imbalance: Given t",
+        "source": "CogML2025.pdf",
+        "chunk_id": 6,
+        "score": 0.015140904113650322
+      }
+    ],
+    "timestamp": "2026-04-19T10:47:12.311326"
+  },
+  {
+    "probe": "probe_2_out_of_corpus_full",
+    "embedding_model": "sentence-transformers/all-MiniLM-L6-v2",
+    "k": 3,
+    "question": "How does photosynthesis work?",
+    "answer": "This is not covered in the provided passages.",
+    "sources": [
+      {
+        "source": "CogML2025.pdf",
+        "chunk_id": 9,
+        "score": 0.0863688737154007
+      },
+      {
+        "source": "IEEE_Paper2_Jyotiska-3.pdf",
+        "chunk_id": 3,
+        "score": 0.06875675916671753
+      },
+      {
+        "source": "CogML2025.pdf",
+        "chunk_id": 6,
+        "score": 0.05322299897670746
+      }
+    ],
+    "drift": {
+      "overlap_ratio": 1.0,
+      "drift_flagged": false,
+      "abstained": true
+    },
+    "retrieved_chunks": [
+      {
+        "text": "could support the development of more accurate and finegrained stress detection models. Building on these promising results, future studies can examine the long-term efficacy of these interventions by evaluating cumulative effects on students\u2019 baseline anxiety and academic performance through longit",
+        "source": "CogML2025.pdf",
+        "chunk_id": 9,
+        "score": 0.0863688737154007
+      },
+      {
+        "text": "Fig. 2. Advanced TinyTCN model architecture for edge deployment TABLE IV TINYML CONVERSION STRATEGIES Model Optimisation RandomForest Pruning, quantisation, tree-to-C DecisionTree Pruning, quantisation SVM Kernel approximation, quantisation XGBoost / LightGBM Pruning, quantisation, Treelite to C Pro",
+        "source": "IEEE_Paper2_Jyotiska-3.pdf",
+        "chunk_id": 3,
+        "score": 0.06875675916671753
+      },
+      {
+        "text": "Fig. 4. Machine learning model building pipeline comprises only numerical, physiologically relevant variables (as defined in TABLE IV), facilitating compatibility with techniques like SMOTE and reducing the risk of model bias from high-level descriptive features. 4) Handling Class Imbalance: Given t",
+        "source": "CogML2025.pdf",
+        "chunk_id": 6,
+        "score": 0.05322299897670746
+      }
+    ],
+    "timestamp": "2026-04-19T10:47:13.639906"
+  },
+  {
+    "probe": "probe_2_out_of_corpus_full",
+    "embedding_model": "sentence-transformers/all-MiniLM-L6-v2",
+    "k": 3,
+    "question": "What is the GDP of India in 2024?",
+    "answer": "This is not covered in the provided passages.",
+    "sources": [
+      {
+        "source": "ICICKE0323__1_-2.pdf",
+        "chunk_id": 5,
+        "score": 0.13229656219482422
+      },
+      {
+        "source": "ICICKE0323__1_-2.pdf",
+        "chunk_id": 1,
+        "score": 0.12279897928237915
+      },
+      {
+        "source": "CogML2025.pdf",
+        "chunk_id": 7,
+        "score": 0.11421266198158264
+      }
+    ],
+    "drift": {
+      "overlap_ratio": 1.0,
+      "drift_flagged": false,
+      "abstained": true
+    },
+    "retrieved_chunks": [
+      {
+        "text": "efficient execution of the models on standard computing platforms and resource-constrained edge devices. Table VI details the necessary software components, such as operating systems, development frameworks, and optimisation tools. Lightweight libraries like TensorFlow Lite for Microcontrollers and ",
+        "source": "ICICKE0323__1_-2.pdf",
+        "chunk_id": 5,
+        "score": 0.13229656219482422
+      },
+      {
+        "text": "FFNN model achieves high test accuracy (99.65%) but is less suitable for edge deployment due to its larger size and slower inference. In contrast, the QAT FFNN model offers near-perfect test accuracy (99.74%), a compact size (21.84 KB), and the fastest inference (84.77 ms), making it ideal for memor",
+        "source": "ICICKE0323__1_-2.pdf",
+        "chunk_id": 1,
+        "score": 0.12279897928237915
+      },
+      {
+        "text": "TABLE VI FRIEDMAN TEST: BASELINE COMPARISON ACROSS GROUPS Metric Statistic p-value scl mean 0.315789 0.853940 scl std 0.315789 0.853940 phasic mean 8.000000 0.018316 scr count 1.972973 0.372885 signal quality 0.291667 0.864302 SDNN 2.947368 0.229080 RMSSD 2.000000 0.367879 HR 2.210526 0.331124 pNN50",
+        "source": "CogML2025.pdf",
+        "chunk_id": 7,
+        "score": 0.11421266198158264
+      }
+    ],
+    "timestamp": "2026-04-19T10:47:15.077604"
+  },
+  {
+    "probe": "probe_2_out_of_corpus_full",
+    "embedding_model": "sentence-transformers/all-MiniLM-L6-v2",
+    "k": 3,
+    "question": "Who wrote the novel Middlemarch?",
+    "answer": "This is not covered in the provided passages.",
+    "sources": [
+      {
+        "source": "CogML2025.pdf",
+        "chunk_id": 5,
+        "score": 0.033145491033792496
+      },
+      {
+        "source": "CogML2025.pdf",
+        "chunk_id": 7,
+        "score": 0.011936228722333908
+      },
+      {
+        "source": "CogML2025.pdf",
+        "chunk_id": 3,
+        "score": 0.005493933334946632
+      }
+    ],
+    "drift": {
+      "overlap_ratio": 1.0,
+      "drift_flagged": false,
+      "abstained": true
+    },
+    "retrieved_chunks": [
+      {
+        "text": "Fig. 3. Error plots of Heart Rate Signal for Group A TABLE V NORMALITY TEST (SHAPIRO-WILK) Metric Group A (Control) Group B (Raga) Group C (Breathing) scl mean W=0.786, p=0.001 W=0.908, p=0.059 W=0.921, p=0.116 scl std W=0.831, p=0.003 W=0.980, p=0.938 W=0.911, p=0.077 phasic mean W=0.841, p=0.004 W",
+        "source": "CogML2025.pdf",
+        "chunk_id": 5,
+        "score": 0.033145491033792496
+      },
+      {
+        "text": "TABLE VI FRIEDMAN TEST: BASELINE COMPARISON ACROSS GROUPS Metric Statistic p-value scl mean 0.315789 0.853940 scl std 0.315789 0.853940 phasic mean 8.000000 0.018316 scr count 1.972973 0.372885 signal quality 0.291667 0.864302 SDNN 2.947368 0.229080 RMSSD 2.000000 0.367879 HR 2.210526 0.331124 pNN50",
+        "source": "CogML2025.pdf",
+        "chunk_id": 7,
+        "score": 0.011936228722333908
+      },
+      {
+        "text": "Fig. 1. Experiment design pipeline homogeneity and minimize confounding variables. Participant inclusion criteria mandated medium to high anxiety levels. The State-Trait Anxiety Inventory (STAI) and initial survey results guided this selection to ensure the anxiety-inducing task\u2019s relevance and the ",
+        "source": "CogML2025.pdf",
+        "chunk_id": 3,
+        "score": 0.005493933334946632
+      }
+    ],
+    "timestamp": "2026-04-19T10:47:16.794715"
+  },
+  {
+    "probe": "probe_2_out_of_corpus_full",
+    "embedding_model": "sentence-transformers/all-MiniLM-L6-v2",
+    "k": 3,
+    "question": "What is the boiling point of ethanol?",
+    "answer": "This is not covered in the provided passages.",
+    "sources": [
+      {
+        "source": "CogML2025.pdf",
+        "chunk_id": 8,
+        "score": 0.10375073552131653
+      },
+      {
+        "source": "CogML2025.pdf",
+        "chunk_id": 2,
+        "score": 0.09469951689243317
+      },
+      {
+        "source": "CogML2025.pdf",
+        "chunk_id": 3,
+        "score": 0.06875304132699966
+      }
+    ],
+    "drift": {
+      "overlap_ratio": 1.0,
+      "drift_flagged": false,
+      "abstained": true
+    },
+    "retrieved_chunks": [
+      {
+        "text": "Fig. 5. F1 score comparison TABLE X COMPARATIVE PERFORMANCE METRICS (COST-SENSITIVE LEARNING) Model Accuracy F1-Score ROC AUC Kernel SVM (RBF) 0.968354 0.967242 0.994203 Kernel SVM (Poly) 0.962025 0.960187 0.883333 Decision Tree 0.981013 0.981210 0.962862 Random Forest 0.981013 0.980804 0.993116 XGB",
+        "source": "CogML2025.pdf",
+        "chunk_id": 8,
+        "score": 0.10375073552131653
+      },
+      {
+        "text": "TABLE II SUMMARY OF ANXIETY REDUCTION TECHNIQUES FOR TEST ANXIETY Ref Psych Test Intervention Sample BioSignal Highlights [8] BAI, WHO-5 Raga Hamsadhvani 55 medical students None Reduced anxiety, improved wellbeing [11] STAI, BAI, SUDS Breathing, PMR, Dive reflex 45 OT students None Sensory techniqu",
+        "source": "CogML2025.pdf",
+        "chunk_id": 2,
+        "score": 0.09469951689243317
+      },
+      {
+        "text": "Fig. 1. Experiment design pipeline homogeneity and minimize confounding variables. Participant inclusion criteria mandated medium to high anxiety levels. The State-Trait Anxiety Inventory (STAI) and initial survey results guided this selection to ensure the anxiety-inducing task\u2019s relevance and the ",
+        "source": "CogML2025.pdf",
+        "chunk_id": 3,
+        "score": 0.06875304132699966
+      }
+    ],
+    "timestamp": "2026-04-19T10:47:18.148987"
+  },
+  {
+    "probe": "probe_3_in_corpus_compressed",
+    "embedding_model": "sentence-transformers/paraphrase-MiniLM-L3-v2",
+    "k": 3,
+    "question": "What neural architecture did you use for stress detection?",
+    "answer": "The paper proposes a novel QAT FFNN model, a lightweight Feed-Forward Neural Network optimised using tiny machine learning techniques such as Quantisation Aware Training and Pruning. [Passage 2]\n\nThe paper also presents an in-depth comparative analysis of both early and late fusion methods for multimodal data fusion at multiple optimisation levels. Baseline machine learning (ML) models and TinyTCN trained on the WESAD dataset depict that late-fusion (ensemble) approaches initially outperform early fusion in terms of accuracy and F1 score. However, after transfer learning using the real-world Test Anxiety Dataset and subsequent TinyML optimisation, including quantisation, distillation, and TFLite Micro compilation, the proposed TinyTCN, along with other ML models with early fusion, maintains performance comparable to their late-fusion counterparts. [Passage 3]",
+    "sources": [
+      {
+        "source": "CogML2025.pdf",
+        "chunk_id": 9,
+        "score": 0.5702800750732422
+      },
+      {
+        "source": "ICICKE0323__1_-2.pdf",
+        "chunk_id": 0,
+        "score": 0.5114220380783081
+      },
+      {
+        "source": "IEEE_Paper2_Jyotiska-3.pdf",
+        "chunk_id": 0,
+        "score": 0.40990105271339417
+      }
+    ],
+    "drift": {
+      "overlap_ratio": 0.978,
+      "drift_flagged": false,
+      "abstained": false
+    },
+    "retrieved_chunks": [
+      {
+        "text": "could support the development of more accurate and finegrained stress detection models. Building on these promising results, future studies can examine the long-term efficacy of these interventions by evaluating cumulative effects on students\u2019 baseline anxiety and academic performance through longit",
+        "source": "CogML2025.pdf",
+        "chunk_id": 9,
+        "score": 0.5702800750732422
+      },
+      {
+        "text": "2025 International Conference on Intelligent Computing and Knowledge Extraction (ICICKE) Towards Portable Mental Stress Detection Systems: A TinyML Approach for EEG Analysis 1st Jyotiska Bharadwaj Dept. of Software Engineering Delhi Technological University Delhi, India jyotiskabharadwaj 24swe05@dtu",
+        "source": "ICICKE0323__1_-2.pdf",
+        "chunk_id": 0,
+        "score": 0.5114220380783081
+      },
+      {
+        "text": "TinyTCN: Edge-Deployable Multimodal Stress Detection with Systematic Early\u2013Late Fusion Analysis and Cross-Dataset Transfer Learning Jyotiska Bharadwaj Dept. of Software Engineering Delhi Technological University New Delhi, India jyotiskabharadwaj@gmail.com Divyashikha Sethia Dept. of Software Engine",
+        "source": "IEEE_Paper2_Jyotiska-3.pdf",
+        "chunk_id": 0,
+        "score": 0.40990105271339417
+      }
+    ],
+    "timestamp": "2026-04-19T10:47:54.314964"
+  },
+  {
+    "probe": "probe_3_in_corpus_compressed",
+    "embedding_model": "sentence-transformers/paraphrase-MiniLM-L3-v2",
+    "k": 3,
+    "question": "Which dataset did you use to train and evaluate your model?",
+    "answer": "This study uses the publicly available EEGMAT dataset by Physionet. [Passage 3]",
+    "sources": [
+      {
+        "source": "CogML2025.pdf",
+        "chunk_id": 6,
+        "score": 0.41463035345077515
+      },
+      {
+        "source": "ICICKE0323__1_-2.pdf",
+        "chunk_id": 3,
+        "score": 0.4082837402820587
+      },
+      {
+        "source": "ICICKE0323__1_-2.pdf",
+        "chunk_id": 2,
+        "score": 0.39417800307273865
+      }
+    ],
+    "drift": {
+      "overlap_ratio": 0.889,
+      "drift_flagged": false,
+      "abstained": false
+    },
+    "retrieved_chunks": [
+      {
+        "text": "Fig. 4. Machine learning model building pipeline comprises only numerical, physiologically relevant variables (as defined in TABLE IV), facilitating compatibility with techniques like SMOTE and reducing the risk of model bias from high-level descriptive features. 4) Handling Class Imbalance: Given t",
+        "source": "CogML2025.pdf",
+        "chunk_id": 6,
+        "score": 0.41463035345077515
+      },
+      {
+        "text": "Fig. 1. Architecture of FFNN and QAT FFNN model and the flow of operation 3) Early stopping: Monitors validation loss and stops training if no improvement is seen after 10 epochs, preventing overfitting. The model restores the best weights for optimal generalisation. 4) L2 regularisation : Adds a pe",
+        "source": "ICICKE0323__1_-2.pdf",
+        "chunk_id": 3,
+        "score": 0.4082837402820587
+      },
+      {
+        "text": "III. PROPOSED METHODS This research proposes a novel QAT FFNN model based on an FFNN model for precise mental stress classification from EEG data. This model is appropriate for low-footprint edge devices because of its smaller size and short inference time. The below section explains the approach ta",
+        "source": "ICICKE0323__1_-2.pdf",
+        "chunk_id": 2,
+        "score": 0.39417800307273865
+      }
+    ],
+    "timestamp": "2026-04-19T10:47:55.846970"
+  },
+  {
+    "probe": "probe_3_in_corpus_compressed",
+    "embedding_model": "sentence-transformers/paraphrase-MiniLM-L3-v2",
+    "k": 3,
+    "question": "What optimisation technique did you apply to reduce model size?",
+    "answer": "Pruning is used to lower the model\u2019s parameters while preserving accuracy and other performance indicators. [Passage 1]",
+    "sources": [
+      {
+        "source": "ICICKE0323__1_-2.pdf",
+        "chunk_id": 3,
+        "score": 0.5202486515045166
+      },
+      {
+        "source": "ICICKE0323__1_-2.pdf",
+        "chunk_id": 5,
+        "score": 0.39422863721847534
+      },
+      {
+        "source": "CogML2025.pdf",
+        "chunk_id": 6,
+        "score": 0.3923755884170532
+      }
+    ],
+    "drift": {
+      "overlap_ratio": 0.917,
+      "drift_flagged": false,
+      "abstained": false
+    },
+    "retrieved_chunks": [
+      {
+        "text": "Fig. 1. Architecture of FFNN and QAT FFNN model and the flow of operation 3) Early stopping: Monitors validation loss and stops training if no improvement is seen after 10 epochs, preventing overfitting. The model restores the best weights for optimal generalisation. 4) L2 regularisation : Adds a pe",
+        "source": "ICICKE0323__1_-2.pdf",
+        "chunk_id": 3,
+        "score": 0.5202486515045166
+      },
+      {
+        "text": "efficient execution of the models on standard computing platforms and resource-constrained edge devices. Table VI details the necessary software components, such as operating systems, development frameworks, and optimisation tools. Lightweight libraries like TensorFlow Lite for Microcontrollers and ",
+        "source": "ICICKE0323__1_-2.pdf",
+        "chunk_id": 5,
+        "score": 0.39422863721847534
+      },
+      {
+        "text": "Fig. 4. Machine learning model building pipeline comprises only numerical, physiologically relevant variables (as defined in TABLE IV), facilitating compatibility with techniques like SMOTE and reducing the risk of model bias from high-level descriptive features. 4) Handling Class Imbalance: Given t",
+        "source": "CogML2025.pdf",
+        "chunk_id": 6,
+        "score": 0.3923755884170532
+      }
+    ],
+    "timestamp": "2026-04-19T10:47:57.644555"
+  },
+  {
+    "probe": "probe_3_in_corpus_compressed",
+    "embedding_model": "sentence-transformers/paraphrase-MiniLM-L3-v2",
+    "k": 3,
+    "question": "What physiological signals did your system analyse?",
+    "answer": "The study analyzes Electrodermal Activity (EDA) and Blood Volume Pulse (BVP) signals. [Passage 1]",
+    "sources": [
+      {
+        "source": "CogML2025.pdf",
+        "chunk_id": 4,
+        "score": 0.411918580532074
+      },
+      {
+        "source": "IEEE_Paper2_Jyotiska-3.pdf",
+        "chunk_id": 1,
+        "score": 0.3372790217399597
+      },
+      {
+        "source": "CogML2025.pdf",
+        "chunk_id": 1,
+        "score": 0.33207517862319946
+      }
+    ],
+    "drift": {
+      "overlap_ratio": 0.273,
+      "drift_flagged": false,
+      "abstained": false
+    },
+    "retrieved_chunks": [
+      {
+        "text": "responses and the effectiveness of the intervention. C. Data Preprocessing and Preparation This work applies a rigorous preprocessing pipeline to the physiological signals to enhance signal quality and analytic reliability. The study uses z-score normalization for EDA signals to standardize amplitud",
+        "source": "CogML2025.pdf",
+        "chunk_id": 4,
+        "score": 0.411918580532074
+      },
+      {
+        "text": "TABLE I TINYML COMPRESSION RESULTS FOR PHYSIOLOGICAL SIGNALS Study Signal / Task Orig. Acc. Comp. Acc. Method Rostami [16] PPG / Stress (WESAD) 88.67 84.78 LSTM + QAT + Prun. Gibbs [17] EDA, HR / Activity (WISDM) 92.30 88.00 CNN + QAT Thota [18] ECG / Arrhythmia 97.62 97.45 DNN + INT8 Ali [19] PPG /",
+        "source": "IEEE_Paper2_Jyotiska-3.pdf",
+        "chunk_id": 1,
+        "score": 0.3372790217399597
+      },
+      {
+        "text": "and improve subjective well-being [8], [17]. Guided deep breathing is another effective intervention grounded in yogic and psychophysiological traditions. By regulating breath rate and depth, deep breathing activates the parasympathetic nervous system, helping to counteract the \u201dfight-or-flight\u201d res",
+        "source": "CogML2025.pdf",
+        "chunk_id": 1,
+        "score": 0.33207517862319946
+      }
+    ],
+    "timestamp": "2026-04-19T10:47:59.094174"
+  },
+  {
+    "probe": "probe_3_in_corpus_compressed",
+    "embedding_model": "sentence-transformers/paraphrase-MiniLM-L3-v2",
+    "k": 3,
+    "question": "What was the accuracy of your best performing model?",
+    "answer": "The QAT FFNN model achieved 99.74% accuracy. [Passage 1]",
+    "sources": [
+      {
+        "source": "ICICKE0323__1_-2.pdf",
+        "chunk_id": 4,
+        "score": 0.4768465757369995
+      },
+      {
+        "source": "ICICKE0323__1_-2.pdf",
+        "chunk_id": 1,
+        "score": 0.4209824204444885
+      },
+      {
+        "source": "ICICKE0323__1_-2.pdf",
+        "chunk_id": 3,
+        "score": 0.39489009976387024
+      }
+    ],
+    "drift": {
+      "overlap_ratio": 0.667,
+      "drift_flagged": false,
+      "abstained": false
+    },
+    "retrieved_chunks": [
+      {
+        "text": "indicators like accuracy, sparsity, model size, inference time, and deployment readiness to demonstrate the efficacy of optimisation strategies. A. Accuracy and loss trends The Base FFNN model achieved 99.65% validation accuracy (Fig. 2) with minimal validation loss (0.0259, Fig. 3), demonstrating r",
+        "source": "ICICKE0323__1_-2.pdf",
+        "chunk_id": 4,
+        "score": 0.4768465757369995
+      },
+      {
+        "text": "FFNN model achieves high test accuracy (99.65%) but is less suitable for edge deployment due to its larger size and slower inference. In contrast, the QAT FFNN model offers near-perfect test accuracy (99.74%), a compact size (21.84 KB), and the fastest inference (84.77 ms), making it ideal for memor",
+        "source": "ICICKE0323__1_-2.pdf",
+        "chunk_id": 1,
+        "score": 0.4209824204444885
+      },
+      {
+        "text": "Fig. 1. Architecture of FFNN and QAT FFNN model and the flow of operation 3) Early stopping: Monitors validation loss and stops training if no improvement is seen after 10 epochs, preventing overfitting. The model restores the best weights for optimal generalisation. 4) L2 regularisation : Adds a pe",
+        "source": "ICICKE0323__1_-2.pdf",
+        "chunk_id": 3,
+        "score": 0.39489009976387024
+      }
+    ],
+    "timestamp": "2026-04-19T10:48:00.660682"
+  }
+]
